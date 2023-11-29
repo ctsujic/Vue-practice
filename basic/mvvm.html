@@ -148,7 +148,14 @@
 
 
 <div id="app">
-  <input type="text">
+  <input type="text" v-model="message">
+  <!-- 
+    資料綁定 v-model 
+    v-model = "data裡的變數" 
+  -->
+  {{ message }}
+  <div v-html="text"></div>
+  <div v-text="text"></div>
 </div>
 
 <script>
@@ -156,9 +163,10 @@ var app = new Vue({
   el: '#app',
   // 在此建立資料內容
 
-  // data: {
-  //   message: '哈囉'
-  // }
+  data: {
+    message: '哈囉',
+    text: '<span>Hello</span>'
+  }
 })
 </script> 
         </div>
