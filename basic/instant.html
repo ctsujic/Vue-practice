@@ -146,6 +146,10 @@
   </ol>
 </div>
 
+<div id="app">
+{{ text }}
+
+</div>
 
 <div>
 
@@ -153,6 +157,12 @@
 
 
 <script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      text: 'Hello'
+    }
+  })
 // var data = {
 //   text: '這是一段話'
 // }
