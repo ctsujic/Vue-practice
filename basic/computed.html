@@ -146,10 +146,10 @@
 
 <div id="app">
   <input type="text" class="form-control" v-model="text">
-  <button class="btn btn-primary mt-1">反轉字串</button>
   <div class="mt-3">
     {{ text.split('').reverse().join('') }}
   </div>
+    {{ reverseText }}
 </div>
 
 <script>
@@ -160,6 +160,25 @@ var app = new Vue({
     newText: ''
   },
   // 請在此撰寫 JavaScript
+  computed: {
+    reverseText: function() {
+      return this.text.split('').reverse().join('');
+    }
+  }
+  // 在 computed 裡面所使用的都必須是 function
+  // 當 data 裡的資料有變動時才會觸發
+  /*
+    Methods 與 Computed 的差異性
+    
+    computed 當監控的資料更動時就會觸發
+    不會修改資料
+
+    methods 是互動的函式，需要觸發才會運作
+    會用來修改資料內容
+
+    資料量大時建議使用 methods 減少不必要的運算
+  
+  */
 });
 </script>
 
